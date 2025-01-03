@@ -15,10 +15,9 @@ import java.util.Date;
 public class Program {
     public static void main(String[] args) {
 
-        Department obj = new Department(1, "Books");
-        Seller seller = new Seller(3000.0, new Date(), obj, "bob@gmail.com", 21, "Bob");
-
         SellerDao sellerDao = DaoFactory.createSellerDao();
+
+        Seller seller = sellerDao.findById(3);
 
         System.out.println(seller);
 
